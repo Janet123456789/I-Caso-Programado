@@ -51,6 +51,7 @@ public class Controlador_Usuario implements ActionListener {
         }//end if iniciar
         
         if (e.getActionCommand().equals("Registrar")) {
+            System.out.println("Adentroooo");
             metodosUsuario.agregarUsuario(registroUsuario.devolverInformacion());
             encontro=true;
             registroUsuario.usuarioRegistrado(encontro);

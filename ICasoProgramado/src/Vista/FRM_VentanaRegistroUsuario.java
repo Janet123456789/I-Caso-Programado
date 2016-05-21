@@ -75,6 +75,11 @@ public class FRM_VentanaRegistroUsuario extends javax.swing.JFrame {
         });
 
         btn_CancelarRegistroUsuario.setText("Cancelar");
+        btn_CancelarRegistroUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CancelarRegistroUsuarioActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -128,6 +133,11 @@ public class FRM_VentanaRegistroUsuario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Error al registrar Usuario"); 
         }
     }//GEN-LAST:event_btn_RegistrarActionPerformed
+
+    private void btn_CancelarRegistroUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CancelarRegistroUsuarioActionPerformed
+       VentanaDePreguntaSobreCuentaUsuario primerVentana=new VentanaDePreguntaSobreCuentaUsuario();
+       primerVentana.setVisible(true);
+    }//GEN-LAST:event_btn_CancelarRegistroUsuarioActionPerformed
 
     /**
      * @param args the command line arguments

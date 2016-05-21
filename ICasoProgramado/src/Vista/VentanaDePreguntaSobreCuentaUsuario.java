@@ -5,15 +5,16 @@
  */
 package Vista;
 
+import Controlador.Controlador_Usuario;
+
 /**
  *
  * @author jeannette
  */
 public class VentanaDePreguntaSobreCuentaUsuario extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VentanaDePreguntaSobreCuentaUsuario
-     */
+    Controlador_Usuario controladorSecion;
+    
     public VentanaDePreguntaSobreCuentaUsuario() {
         initComponents();
         initComponents();
@@ -84,8 +85,13 @@ public class VentanaDePreguntaSobreCuentaUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_NoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NoActionPerformed
-        FRM_VentanaRegistroUsuario ventanaRegistro=new FRM_VentanaRegistroUsuario();
-        ventanaRegistro.setVisible(true);
+        /*FRM_VentanaRegistroUsuario ventanaRegistro=new FRM_VentanaRegistroUsuario();
+        ventanaRegistro.setVisible(true);*/
+        
+            FRM_VentanaRegistroUsuario ventanaRegistro=new FRM_VentanaRegistroUsuario();
+            controladorSecion=new Controlador_Usuario(ventanaRegistro);
+            ventanaRegistro.agregarEventos(controladorSecion);
+            ventanaRegistro.setVisible(true);
     }//GEN-LAST:event_btn_NoActionPerformed
 
     private void btn_SiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SiActionPerformed

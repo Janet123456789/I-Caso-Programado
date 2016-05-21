@@ -93,6 +93,11 @@ public class IniciarSecion extends javax.swing.JFrame {
         });
 
         btn_CancelarInicioDeSecion.setText("Cancelar");
+        btn_CancelarInicioDeSecion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_CancelarInicioDeSecionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -162,6 +167,11 @@ public class IniciarSecion extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btn_IniciarSecionMouseClicked
+
+    private void btn_CancelarInicioDeSecionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_CancelarInicioDeSecionActionPerformed
+       VentanaDePreguntaSobreCuentaUsuario primerVentana=new VentanaDePreguntaSobreCuentaUsuario();
+       primerVentana.setVisible(true);
+    }//GEN-LAST:event_btn_CancelarInicioDeSecionActionPerformed
 
     /**
      * @param args the command line arguments

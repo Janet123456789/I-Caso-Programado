@@ -11,6 +11,7 @@ import Controlador.Controlador_FRM_VentanaMatricula;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Vista.FRM_VentanaEstudiante;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -173,6 +174,7 @@ public class FuenteDeInformacion extends javax.swing.JFrame {
 
                 
                 this.setVisible(false);
+
                 this.ventanaMatricula.setVisible(true);
             }//end if
             
