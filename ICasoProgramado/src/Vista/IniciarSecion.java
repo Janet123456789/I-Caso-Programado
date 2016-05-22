@@ -28,7 +28,7 @@ public class IniciarSecion extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Ventana de Inicio De Seción");
-        controladorSecion=new Controlador_Usuario(this);
+      // 
         agregarEventos(controladorSecion);
         metodosUsuario=new MetodosUsuario();
        
@@ -144,11 +144,12 @@ public class IniciarSecion extends javax.swing.JFrame {
 
     private void btn_IniciarSecionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_IniciarSecionMouseClicked
        
-        String usuario=""+this.jt_VerificarUsuario;;
-        String contrasena=""+this.jp_VerificarContrasena;
-        
-       // String password=new String(jp_VerificarContrasena.getPassword());
-        if(usuarioRegistrado==true)
+        String usuario=this.jt_VerificarUsuario.getText().toString();
+        String contrasena=""+this.jp_VerificarContrasena.getText().toString();
+        System.err.println("aquiii "+contrasena);
+         controladorSecion=new Controlador_Usuario(usuario,contrasena);
+         
+        if(controladorSecion.validar())
         {
           FRM_MenuPrincipal menuPrincipal=new FRM_MenuPrincipal();        
           menuPrincipal.setVisible(true);

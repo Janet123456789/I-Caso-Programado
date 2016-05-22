@@ -17,7 +17,7 @@ import java.sql.Statement;
 public class ConexionBD_Estudiante {
        Connection con = null;
    
-   public String arregloDatos[]= new String[2];
+       public String arregloDatos[]= new String[2];
    
     public ConexionBD_Estudiante()
     {

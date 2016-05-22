@@ -14,12 +14,14 @@ import Controlador.Controlador_Usuario;
 public class VentanaDePreguntaSobreCuentaUsuario extends javax.swing.JFrame {
 
     Controlador_Usuario controladorSecion;
+    //splash splash;
     
     public VentanaDePreguntaSobreCuentaUsuario() {
         initComponents();
         initComponents();
         setLocationRelativeTo(null);//para que la ventana aparezca en el centro de la pantalla
         setResizable(false);//para que no puedan maximizar la ventana
+       // splash=new splash();
         
     }
 
@@ -95,15 +97,17 @@ public class VentanaDePreguntaSobreCuentaUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_NoActionPerformed
 
     private void btn_SiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SiActionPerformed
-         IniciarSecion inicioSecion=new IniciarSecion();
-       // inicioSecion.tipomenuPricipal(this);
-        inicioSecion.setVisible(true);
+           
+        IniciarSecion inicioSecion=new IniciarSecion();
+           // inicioSecion.tipomenuPricipal(this);
+            inicioSecion.setVisible(true);
+        
     }//GEN-LAST:event_btn_SiActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+   public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

@@ -51,6 +51,18 @@ public class FRM_VentanaRegistroUsuario extends javax.swing.JFrame {
         this.usuarioRegistrado=usuarioRegistrado;
     }
       
+    public String extraerUsuario()
+    {
+        System.out.println("Nombre Usuario: "+this.jt_NombreUsuario.getText());
+        return this.jt_NombreUsuario.getText();
+        
+    }
+    
+    public String extraerContrasena()
+    {
+        return this.jpf_Contrasena.getText();
+    }
+      
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

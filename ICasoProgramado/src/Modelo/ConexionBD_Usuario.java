@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,9 +17,9 @@ import java.sql.Statement;
  */
 public class ConexionBD_Usuario {
 
-    Connection con = null;
+   Connection con = null;
    
-   public String arregloDatos[]= new String[1];
+   public String arregloDatos[]= new String[2];
    
     public ConexionBD_Usuario()
     {
@@ -41,14 +42,14 @@ public class ConexionBD_Usuario {
             e.printStackTrace();
         } 
     }
-    public boolean registrarEstudiante(String cedula, String nombreCompleto, String direccion)
+    public boolean registrarUsuario(String usuario, String contrasena)
     {
         ResultSet rs = null;
         Statement cmd = null;
         boolean ejecuto;
         try {
                 cmd = con.createStatement();
-                ejecuto = cmd.execute("INSERT INTO estudiante(cedula, nombreCompleto, direccion) VALUES ('"+cedula+"','"+nombreCompleto+"','"+direccion+"')");
+                ejecuto = cmd.execute("INSERT INTO usuario(usuario, contrasena) VALUES ('"+usuario+"','"+contrasena+"')");
                 
                return true;
                // rs.close();
@@ -62,25 +63,31 @@ public class ConexionBD_Usuario {
     }
     
     
-   public boolean consultarEstudiante(String cedula)
-    {
+   public boolean consultarUsuario(String usuario, String contrasena)
+    {//, String contrasena
         ResultSet rs = null;
         Statement cmd = null;
-        String datos[] = new String[2];
+        String datos[] = new String[1];
         boolean encontro=false;
 
+        System.err.println(usuario+" 8888  "+contrasena);
         try {
+            System.err.println(usuario+""+contrasena);
                 cmd = con.createStatement();
-                rs = cmd.executeQuery("SELECT nombreCompleto, direccion FROM estudiante WHERE cedula='"+cedula+"'");
+                rs = cmd.executeQuery("SELECT usuario, contrasena FROM usuario WHERE usuario='"+usuario+"' AND contrasena= '"+contrasena+"'");
                 
                 while (rs.next()) 
                 {
-                    arregloDatos[0] = rs.getString("nombreCompleto");
-                    arregloDatos[1] = rs.getString("direccion");
+                    System.err.println("encontro");
+                    //arregloDatos[0] = rs.getString("usuario");
+                    arregloDatos[0] = rs.getString("usuario");
+                    arregloDatos[1] = rs.getString("contrasena");
                     
                     //int edad = rs.getInt(2);
-                    System.out.println("Información de la BD:Nombre Completo: "+arregloDatos[0]+", Dirección: "+ arregloDatos[1]); 
-                    encontro=true;
+                    //System.out.println("Información de la BD: Usuario: "+arregloDatos[0]+", Contraseña: "+ arregloDatos[1]); 
+                    //System.out.println("Información de la BD: Usuario: "+arregloDatos[0] +" Contraseña: "+arregloDatos[1]); 
+
+                   encontro=true;
                 }
                 rs.close();
         }
@@ -88,6 +95,7 @@ public class ConexionBD_Usuario {
         {
             System.out.println("SQLException ejecutando sentencia: " + e.getMessage());
         }
+        
         return encontro;
     }
     
